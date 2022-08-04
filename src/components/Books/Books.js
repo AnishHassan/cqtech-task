@@ -6,7 +6,6 @@ import { Typography } from '@mui/material'
 
 
 function Books() {
-    const cards = [{id:1, assigned: true , name:'Chronicles of Amazon',author:'Alexa' , borrowedBy:'Anish Hassan' , dateOdBorrow:'01-07-2022' , dateOfReturn:'11-07-2022'} , {id:1, assigned: false , name:'Life of me',author:'Ash'}];
     const [books , setBooks] = useState([]);
 
 

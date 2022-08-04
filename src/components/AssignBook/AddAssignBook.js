@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
@@ -14,14 +13,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Paper from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 import { useState } from 'react'
-import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import Autocomplete from '@mui/material/Autocomplete';
 import moment from 'moment'
 
@@ -46,17 +41,7 @@ export default function AddAssignBook() {
     const [studentAssign , setStudentAssign] = useState([]);
     const [bookAssign , setBookAssign] = useState([]);
     const [added , setAdded] = useState(false);
-
-    const [name, setName] = useState('');
-    const [author, setAuthor] = useState('');
-    const [img, setImg] = useState('');
-
-    const [borrowedBy, setBorrowedBy] = useState('');
-
     const [dateOfBorrow, setdateOfBorrow] = useState(new Date());
-
-    
-
     const [dateOfReturn, setDateOfReturn] = useState(new Date());
 
     React.useEffect( () => {
@@ -64,7 +49,6 @@ export default function AddAssignBook() {
            return res.json();
         })
         .then((data) =>{
-            console.log(data);
             setBooks(data);
         });
 
@@ -79,7 +63,6 @@ export default function AddAssignBook() {
             })
 
             setStudents(students);
-            console.log(students)
         });
     }, [])
 
@@ -89,15 +72,9 @@ export default function AddAssignBook() {
     const handleSubmit = (event) => {
 
         event.preventDefault();
-
-        console.log(bookAssign)
-        console.log(studentAssign)
        
         const formatdateOfBorrow = moment(dateOfBorrow).format('L');
         const formatdateOfReturn = moment(dateOfReturn).format('L');
-
-        console.log(formatdateOfBorrow);
-        console.log(formatdateOfReturn);
 
         setdateOfBorrow(formatdateOfBorrow);
         setDateOfReturn(formatdateOfReturn);
@@ -120,8 +97,6 @@ export default function AddAssignBook() {
          })
 
         setAdded(true);
-        
-        console.log(added);
         handleClose();
         window.location.reload(false);
 

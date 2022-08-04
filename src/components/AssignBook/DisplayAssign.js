@@ -6,9 +6,6 @@ import book from '../../images/book.jpg'
 function DisplayAssign(props) {
 
     let cards = props.data;
-    console.log(cards);
-
-    
 
   return (
     <React.Fragment>

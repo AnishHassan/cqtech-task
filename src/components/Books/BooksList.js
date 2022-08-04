@@ -6,7 +6,6 @@ import book from '../../images/book.jpg'
 function BooksList(props) {
 
     let cards = props.data;
-    console.log(cards);
 
     
 

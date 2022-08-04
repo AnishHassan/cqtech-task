@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar';
-import { Drawer,Tab, Tabs, Toolbar, Typography } from '@mui/material';
+import { Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import Sidemenu from '../Sidemenu';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 
@@ -34,8 +33,6 @@ function Navbar() {
             </Tabs>
             </Toolbar>
             
-
-            {/* <Sidemenu/> */}
             
         </AppBar>
     </React.Fragment>
